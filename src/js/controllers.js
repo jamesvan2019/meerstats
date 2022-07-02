@@ -133,11 +133,9 @@ netStatsApp.controller('StatsCtrl', function ($scope, $filter, $localStorage, so
 				$scope.nodes = data;
 
 				_.forEach($scope.nodes, function (node, index) {
-					console.log(node, "===========");
 					// Init hashrate
 					if (_.isUndefined(node.stats.hashrate))
 						node.stats.hashrate = 0;
-					node.stats.peers = 7;
 					if (node.info.gsupdate) {
 						node.stats.latency = node.info.gsupdate.replace('s', '');
 					}
